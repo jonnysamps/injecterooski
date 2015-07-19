@@ -1,0 +1,32 @@
+{
+  "name": "injecterooski",
+  "version": "0.1.0",
+  "description": "Dependency injection framework for NodeJS applications",
+  "main": "injecterooski.js",
+  "scripts": {
+    "test": "mocha --recursive ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonnysamps/injecterooski.git"
+  },
+  "keywords": [
+    "Dependency",
+    "Injection",
+    "DI",
+    "Node",
+    "Javascript"
+  ],
+  "author": "Jonathan Samples (@jonnysamps)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonnysamps/injecterooski/issues"
+  },
+  "dependencies": {
+    "q": "~1.4.1"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  }
+}
