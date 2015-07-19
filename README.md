@@ -26,6 +26,12 @@ I want a DI framework and thus this project to:
 
 There are probably more but I can't think of them at the moment.
 
+Installation
+------------
+```bash
+> npm install injecterooski
+```
+
 Usage Examples
 --------------
 
@@ -142,4 +148,4 @@ Future Features
 
 Contributing
 ------------
-If you like to contribute please fork and send me a PR.
+If you'd like to contribute please fork and send me a PR.
