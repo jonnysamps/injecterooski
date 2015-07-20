@@ -23,7 +23,6 @@
     "url": "https://github.com/jonnysamps/injecterooski/issues"
   },
   "dependencies": {
-    "q": "~1.4.1"
   },
   "devDependencies": {
     "chai": "*",

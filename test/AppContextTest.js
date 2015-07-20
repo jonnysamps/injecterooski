@@ -1,5 +1,4 @@
 var AppContext = require('../src/AppContext'),
-    Q = require('q'),
     expect = require('chai').expect;
 
 describe('AppContext', function(){
