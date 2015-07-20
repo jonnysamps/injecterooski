@@ -1,6 +1,6 @@
 {
   "name": "injecterooski",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dependency injection framework for NodeJS applications",
   "main": "injecterooski.js",
   "scripts": {
@@ -22,8 +22,7 @@
   "bugs": {
     "url": "https://github.com/jonnysamps/injecterooski/issues"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "*",
     "mocha": "*"
