@@ -160,7 +160,8 @@ AppContext.prototype.get = function(nameOrType){
  * Stolen from Angular :) and adapted
  * @type {RegExp}
  */
-var FN_ARGS = /^function\s*[^\(]*\(\s*([^\)]*)\)/m;
+//var FN_ARGS = /^function\s*[^\(]*\(\s*([^\)]*)\)/m;
+var FN_ARGS = /^[^\(]*\(\s*([^\)]*)\)/m;
 var FN_ARG_SPLIT = /,/;
 var FN_ARG = /^\s*(_?)(.+?)\1\s*$/;
 var STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg;
