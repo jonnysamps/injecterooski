@@ -162,23 +162,27 @@ AppContext.prototype.get = function(nameOrType){
  */
 //var FN_ARGS = /^function\s*[^\(]*\(\s*([^\)]*)\)/m;
 var FN_ARGS = /^[^\(]*\(\s*([^\)]*)\)/m;
+var CLASS_ARGS = /^[^\(]*constructor\(\s*([^\)]*)\)/m;
 var FN_ARG_SPLIT = /,/;
 var FN_ARG = /^\s*(_?)(.+?)\1\s*$/;
 var STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg;
 AppContext.getDependencies = function(fn) {
     var deps,
-        fnText,
-        argDecl;
+      fnText,
+      argDecl;
 
     if (typeof fn == 'function') {
+        // Need to see if it is a ES6 class
+        var isES6Class = fn.toString().indexOf('class') === 0
         deps = [];
         fnText = fn.toString().replace(STRIP_COMMENTS, '');
-        argDecl = fnText.match(FN_ARGS);
-        argDecl[1].split(FN_ARG_SPLIT).map(function(arg){
-            arg.replace(FN_ARG, function(all, underscore, name){
-                deps.push(name);
+        argDecl = fnText.match(isES6Class ? CLASS_ARGS : FN_ARGS);
+        if(argDecl !== null && argDecl.length > 0)
+            argDecl[1].split(FN_ARG_SPLIT).map(function(arg){
+                arg.replace(FN_ARG, function(all, underscore, name){
+                    deps.push(name);
+                });
             });
-        });
     }
 
     return deps;

@@ -1,3 +1,5 @@
+'use strict';
+
 var AppContext = require('../src/AppContext'),
     expect = require('chai').expect;
 
@@ -26,6 +28,22 @@ describe('AppContext', function(){
             var fn = function(){};
             var deps = AppContext.getDependencies(fn);
 
+            expect(deps).to.have.length(0);
+        });
+
+        it('should return the list of constructor args for a class', function(){
+            var clazz = class Test {
+                constructor(mary, had, a) {}
+            };
+            var deps = AppContext.getDependencies(clazz);
+            expect(deps).to.have.length(3);
+        });
+
+        it('should return the empty array for class without constructor', function(){
+            var clazz = class Test {
+                otherFunc(mary, had, a) {}
+            };
+            var deps = AppContext.getDependencies(clazz);
             expect(deps).to.have.length(0);
         });
 
